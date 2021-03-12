@@ -31,7 +31,7 @@ function Login() {
     axios.post(`${baseUrl}/login`, body)
     .then(respose => {
       window.localStorage.setItem('token', respose.data.token);
-      router.push('/testPage')
+      router.push('/registredPage')
       resetForm();
     }). catch (error => {
       console.log(error);

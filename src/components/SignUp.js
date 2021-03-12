@@ -16,7 +16,7 @@ function SignUp() {
   });
 
   const { name, email, password } = form;
-  
+
   const baseUrl = React.useContext(UrlContext);
 
   const router = useRouter();
@@ -36,7 +36,7 @@ function SignUp() {
     axios.post(`${baseUrl}/register`, body)
       .then(response => {
         window.localStorage.setItem('token', response.data.token);
-        router.push('/testPage')
+        router.push('/registredPage')
         resetForm();
         window.alert('Cadastro efetuado com sucesso!')
 
