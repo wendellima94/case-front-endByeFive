@@ -1,5 +1,8 @@
 import { useState, useEffect } from 'react';
 
+import { useRouter } from 'next/router'
+
+
 export const useForm = (initialValues) => {
 
   const [form, setForm] = useState(initialValues)
@@ -16,13 +19,13 @@ export const useForm = (initialValues) => {
 };
 
 export const usePrivatePage = (token) => {
-  const history = useHistory();
+  const router = useRouter();
 
   useEffect(() => {
 
     if (! token){
       window.alert('A sessão expirou. Faça login novamente.')
-      history.replace('/');
+      router.replace('/');
     };
-  }, [history]);
+  }, [router]);
 };

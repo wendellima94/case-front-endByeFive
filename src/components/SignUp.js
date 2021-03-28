@@ -5,7 +5,9 @@ import { useRouter } from 'next/router'
 import { useForm } from '../hooks/hooks';
 import { UrlContext } from '../contexts/context';
 
+import { OutlinedInputStyled } from '../components/inputs/FormInput'
 import styles from '../styles/components/inputsCss/Inputs.module.css';
+
 
 function SignUp() {
   const [ifRegister, setIfRegister] = useState(false)
@@ -53,32 +55,34 @@ function SignUp() {
       <div className={styles.formContainer}>
         {ifRegister ? (
           <form onSubmit={goToPrivateArea}>
-          <input 
-            name='name'
-            placeholder='Nome de usuário'
-            onChange={handleInputChange}
-            type='text'
-            value={name}
-            required
-          />
-          <input 
-            name='email'
-            placeholder='Email'
-            onChange={handleInputChange}
-            type='email'
-            required
-            value={email}
-          />
-          <input 
-            name='password'
-            type='password' 
-            placeholder='Senha'
-            value={password}
-            onChange={handleInputChange}
-            type='password' 
-            required          />
-          <button type='submit'>Cadastre-se</button>
-        </form>
+            
+            <OutlinedInputStyled 
+              name='name'
+              placeholder='Nome de usuário'
+              onChange={handleInputChange}
+              type='text'
+              value={name}
+              required
+            />
+            <OutlinedInputStyled 
+              name='email'
+              placeholder='Email'
+              onChange={handleInputChange}
+              type='email'
+              required
+              value={email}
+            />
+            <OutlinedInputStyled 
+              name='password'
+              type='password' 
+              placeholder='Senha'
+              value={password}
+              onChange={handleInputChange}
+              type='password' 
+              required
+            />
+            <button type='submit'>Cadastre-se</button>
+          </form>
         ) : (
           <form>
             Ainda não possui cadastro?

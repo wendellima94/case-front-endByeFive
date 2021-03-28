@@ -1,0 +1,47 @@
+.pageContainer {
+  width: 30rem;
+
+}
+
+.formContainer {
+  display: flex;
+  justify-content: flex-end;
+
+}
+
+.signButton {
+  height: 1.8rem;
+  width: 4rem;
+
+  text-align: center;
+
+  color: white;
+  background-color: #4cd62b;
+
+  border-radius: 8px;
+  border: none;
+
+  transition: 0.2s;
+}
+
+.formContainer button:hover {
+  filter: brightness(0.9);
+  color: var(--title)
+}
+
+.inputMaterialUi {
+  width: 12rem;
+  height: 2rem;
+
+  margin-right: 4px;
+  box-shadow: 0px 2px 2px var(--text);
+ 
+  background-color: var(--background);
+
+}
+
+.iconButton {
+  display: flex;
+  background-color: black;
+}
+
