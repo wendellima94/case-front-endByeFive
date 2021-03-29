@@ -6,7 +6,7 @@
 }
 
 body {
-  background-color: #f2f3f5;
+  background-color: var(--background);
 
 }
 
@@ -16,7 +16,8 @@ body, input, textarea, button {
 
 :root {
   --white:#fff;
-  --background: #f2f3f5;
+  --background: #e9dddd;
+  --inputs:  #f2f3f5;
   --gray-line: #dcdde0;
   --text:#666666;
   --text-highlight: #b3b9ff;

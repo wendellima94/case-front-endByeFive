@@ -55,7 +55,6 @@ function SignUp() {
       <div className={styles.formContainer}>
         {ifRegister ? (
           <form onSubmit={goToPrivateArea}>
-            
             <OutlinedInputStyled 
               name='name'
               placeholder='Nome de usuário'
@@ -85,6 +84,7 @@ function SignUp() {
           </form>
         ) : (
           <form>
+            <h1>Seja bem vindo!</h1><br/>
             Ainda não possui cadastro?
           <button onClick={handleRegister} type='submit'>Clique aqui </button>
           </form>

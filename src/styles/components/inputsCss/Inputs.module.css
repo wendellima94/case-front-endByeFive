@@ -28,7 +28,7 @@
   margin-top: 6px;
 
   text-align: center;
-  background-color: #4cd62b;
+  background-color: var(--blue-twitter);
   color: #fff;
 
   transition: 0.2s;

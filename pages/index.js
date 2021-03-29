@@ -2,13 +2,14 @@ import Head from 'next/head'
 
 import { UrlContext } from '../src/contexts/context';
 
-import Login from '../src/components/Login'
 import SignUp from '../src/components/SignUp'
+import Header from '../src/components/Header';
+import Footer from '../src/components/Footer';
 
 import styles from '../src/styles/pages/HomePage.module.css';
-import Header from '../src/components/Header';
 
 import { createMuiTheme, MuiThemeProvider } from "@material-ui/core";
+import ImageHomePage from '../src/components/ImageHomePage';
 
  export const theme = createMuiTheme({
   palette: {
@@ -28,18 +29,21 @@ export default function Home() {
   return (
     <UrlContext.Provider value={'http://localhost:4000/user'}>
     <MuiThemeProvider theme={theme}>
-      <Header />  
+      <Header /> 
       <div className={styles.container}>
         <Head>
           <title>Sistema de cadastro</title>
         </Head>
         <div className={styles.homeContainer}>
-         
+          <section>
+            <ImageHomePage />
+          </section>         
           <section>
             <SignUp />
           </section> 
-        </div>  
+        </div>
       </div>
+      <Footer />
       </MuiThemeProvider>
     </UrlContext.Provider>
   )

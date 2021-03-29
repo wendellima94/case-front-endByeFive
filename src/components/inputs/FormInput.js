@@ -8,7 +8,7 @@ const styles = {
   root: {
     width: '12rem',
     height: '2rem',
-    backgroundColor: 'var(--background)',
+    backgroundColor: 'var(--inputs)',
     borderRadius: 12,
     border: 0,
     boxShadow: '0px 2px 2px var(--text)',
