@@ -6,7 +6,7 @@ import TextField from '@material-ui/core/TextField';
 
 const styles = {
   root: {
-    width: '12rem',
+    width: '10rem',
     height: '2rem',
     backgroundColor: 'var(--inputs)',
     borderRadius: 12,
@@ -14,6 +14,7 @@ const styles = {
     boxShadow: '0px 2px 2px var(--text)',
     margin: '6px 0'
   }
+  
 }
 
 
