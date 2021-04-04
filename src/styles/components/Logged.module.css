@@ -11,6 +11,11 @@
 .mainContainer form h1 { 
   margin-bottom: 10px;
 }
+@media(max-width: 650px ){
+.inputCSS {
+  width: 10rem;
+}
+}
 
 
 

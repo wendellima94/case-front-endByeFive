@@ -3,6 +3,20 @@ import React from 'react';
 import { withStyles } from '@material-ui/core/styles';
 import OutlinedInput from '@material-ui/core/OutlinedInput';
 import TextField from '@material-ui/core/TextField';
+import { createMuiTheme } from "@material-ui/core";
+
+
+const theme = createMuiTheme({
+  breakpoints: {
+    values: {
+      xs: 0,
+      sm: 600,
+      md: 650,
+      lg: 1280,
+      xl: 1920,
+    }
+  },
+});
 
 const styles = {
   root: {
@@ -19,8 +33,13 @@ const styles = {
     backgroundColor: 'var(--inputs)',
     borderRadius: 4,
     boxShadow: '0px 2px 2px var(--text)',
+    [theme.breakpoints.down('md')]: {
+      width: '16rem',
+    },
+    }
   }
-}
+  
+
 
 
 export const OutlinedInputStyled = withStyles(styles)(({classes, color, ...other}) => 

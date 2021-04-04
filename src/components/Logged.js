@@ -15,6 +15,7 @@ function Logged() {
         <form>
           <h1>lorem ipsum</h1>
           <LoggedInput
+            
             label="Digite aqui seu texto"
             multiline
             rows={4}

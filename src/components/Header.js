@@ -22,8 +22,10 @@ export function HeaderPagePost() {
 
   React.useEffect(() =>{
     setUser(window.localStorage.getItem('username'))
+    
   }, [])
 
+  
   const logOut = () => {
     window.localStorage.clear();
     router.push('/');
