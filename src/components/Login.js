@@ -17,6 +17,8 @@ import { OutlinedInputStyled } from '../components/inputs/FormInput'
 
 
 function Login() {
+  // useFeedPage();
+
   const { form, onChange, resetForm } = useForm({
     email: '',
     password: '',
@@ -25,6 +27,7 @@ function Login() {
   const [values, setValues] = React.useState({
     showPassword: false,
   });
+  
   const baseUrl = React.useContext(UrlContext);
 
   const { email, password } = form;
@@ -41,9 +44,10 @@ function Login() {
     event.preventDefault();
     const body = { email, password }
     axios.post(`${baseUrl}/login`, body)
-    .then(respose => {
-      window.localStorage.setItem('token', respose.data.token);
-      router.push('/registredPage')
+    .then(response => {
+      window.localStorage.setItem('token', response.data.token);
+      window.localStorage.setItem('username',  response.data.user.name)
+      router.push('/postPage')
       resetForm();
     }). catch (error => {
       console.log(error);
@@ -64,7 +68,7 @@ function Login() {
       <div className={styles.formContainer}>
         <form onSubmit={goToRegistredPage}>
           <OutlinedInputStyled
-            color='primary'
+            color='secondary'
             name='email'
             placeholder='Email'
             onChange={handleInputChange}
@@ -97,17 +101,7 @@ function Login() {
                 {values.showPassword ? <Visibility /> : <VisibilityOff />}
               </IconButton>
             }
-          /> 
-          {/* <input
-            name='password'
-            type='password' 
-            placeholder='Senha'
-            value={password}
-            onChange={handleInputChange}
-            type='password' 
-            required
-          /> */}
-
+          />
           <button 
           className={styles.signButton}
           type='submit'

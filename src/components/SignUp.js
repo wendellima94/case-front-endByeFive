@@ -62,6 +62,7 @@ function SignUp() {
               type='text'
               value={name}
               required
+              color='secondary'
             />
             <OutlinedInputStyled 
               name='email'
@@ -70,6 +71,8 @@ function SignUp() {
               type='email'
               required
               value={email}
+              color='secondary'
+
             />
             <OutlinedInputStyled 
               name='password'

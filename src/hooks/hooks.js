@@ -18,14 +18,29 @@ export const useForm = (initialValues) => {
   return { form, onChange, resetForm }
 };
 
-export const usePrivatePage = (token) => {
+export const usePrivatePage = () => {
+
   const router = useRouter();
 
   useEffect(() => {
+    const token = window.localStorage.getItem('token');
 
-    if (! token){
-      window.alert('A sessão expirou. Faça login novamente.')
-      router.replace('/');
-    };
+    if (!token) {
+      router.push('/');
+    }
   }, [router]);
-};
+}
+
+export const useFeedPage = () => {
+
+  const router = useRouter();
+
+  useEffect(() => {
+    const token = window.localStorage.getItem('token');
+
+    if (token) {
+      router.push('/postPage');
+    }
+  }, [router]);
+}
+

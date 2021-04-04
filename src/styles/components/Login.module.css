@@ -24,7 +24,7 @@
   transition: 0.2s;
 }
 
-.formContainer button:hover {
+.signButton:hover {
   filter: brightness(0.9);
   color: var(--title)
 }
