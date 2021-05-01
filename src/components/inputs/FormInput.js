@@ -33,7 +33,9 @@ const styles = {
     backgroundColor: 'var(--inputs)',
     borderRadius: 4,
     boxShadow: '0px 2px 2px var(--text)',
-    [theme.breakpoints.down('md')]: {
+    [
+      theme.breakpoints.down('md')
+    ]: {
       width: '16rem',
     },
     }

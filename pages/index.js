@@ -2,9 +2,9 @@ import Head from 'next/head'
 import React from 'react'
 import { UrlContext } from '../src/contexts/context';
 
-import SignUp from '../src/components/SignUp'
-import { Header } from '../src/components/Header';
-import Footer from '../src/components/Footer';
+import SignUp from '../src/components/Register/SignUp'
+import { Header } from '../src/components/Header/Header';
+import Footer from '../src/components/Footer/Footer';
 
 import styles from '../src/styles/pages/HomePage.module.css';
 
@@ -25,7 +25,7 @@ const MyTheme = createMuiTheme({
 export default function Home() {
 
   return (
-    <UrlContext.Provider value={'http://localhost:4000/user'}>
+    <UrlContext.Provider value={'http://localhost:4000'}>
     <MuiThemeProvider theme={MyTheme}>
       <Head>
       <title>Página de Cadastro</title>

@@ -1,10 +1,9 @@
 import React from 'react';
 import { useRouter } from 'next/router';
 
-import style from '../styles/components/Header.module.css';
+import style from '../../styles/components/Header.module.css';
 
-import Login from './Login';
-
+import Login from '../Login/Login';
 
 export function Header() {
   return (
@@ -25,7 +24,6 @@ export function HeaderPagePost() {
     
   }, [])
 
-  
   const logOut = () => {
     window.localStorage.clear();
     router.push('/');

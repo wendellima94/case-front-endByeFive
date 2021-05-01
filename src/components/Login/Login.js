@@ -2,10 +2,10 @@ import React from 'react';
 import axios from 'axios';
 import { useRouter } from 'next/router'
 
-import { useForm } from '../hooks/hooks';
-import { UrlContext } from '../contexts/context';
+import { useForm } from '../../hooks/hooks';
+import { UrlContext } from '../../contexts/context';
 
-import styles from '../styles/components/Login.module.css';
+import styles from '../../styles/components/Login.module.css';
 
 //Imports do Material-Ui
 import IconButton from '@material-ui/core/IconButton';
@@ -13,14 +13,14 @@ import Visibility from '@material-ui/icons/Visibility';
 import VisibilityOff from '@material-ui/icons/VisibilityOff';
 import AccountCircle from '@material-ui/icons/AccountCircle';
 
-import { OutlinedInputStyled } from '../components/inputs/FormInput'
+import { OutlinedInputStyled } from '../inputs/FormInput'
 
 
 function Login() {
   // useFeedPage();
 
   const { form, onChange, resetForm } = useForm({
-    email: '',
+    username: '',
     password: '',
   });
 
@@ -30,7 +30,7 @@ function Login() {
   
   const baseUrl = React.useContext(UrlContext);
 
-  const { email, password } = form;
+  const { username, password } = form;
   
   const handleInputChange = (event) => {
     const { name, value } = event.target;
@@ -42,7 +42,7 @@ function Login() {
 
   const goToRegistredPage = (event) => {
     event.preventDefault();
-    const body = { email, password }
+    const body = { username, password }
     axios.post(`${baseUrl}/login`, body)
     .then(response => {
       window.localStorage.setItem('token', response.data.token);
@@ -69,12 +69,12 @@ function Login() {
         <form onSubmit={goToRegistredPage}>
           <OutlinedInputStyled
             color='secondary'
-            name='email'
-            placeholder='Email'
+            name='username'
+            placeholder='Nome de usuário'
             onChange={handleInputChange}
-            type='email'
+            type='username'
             required
-            value={email}
+            value={username}
             endAdornment={
               <AccountCircle
                 edge='end'
